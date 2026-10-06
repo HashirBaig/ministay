@@ -6,6 +6,7 @@ import * as THREE from "three";
 export default function HeroAtmosphere() {
   const host = useRef<HTMLDivElement>(null);
   const reducedMotion = useReducedMotion();
+
   useEffect(() => {
     const element = host.current;
     if (!element || reducedMotion) return;
@@ -19,6 +20,7 @@ export default function HeroAtmosphere() {
     } catch {
       return;
     }
+
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.setClearColor(0x000000, 0);
     element.appendChild(renderer.domElement);
@@ -75,5 +77,6 @@ export default function HeroAtmosphere() {
       renderer.domElement.remove();
     };
   }, [reducedMotion]);
+
   return <div ref={host} className="hero-atmosphere" aria-hidden="true" />;
 }

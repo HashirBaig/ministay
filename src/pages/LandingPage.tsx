@@ -70,12 +70,10 @@ export default function LandingPage() {
     setSearchSummary(
       `${checkIn} → ${checkOut} · ${guests} ${guests === 1 ? "guest" : "guests"}`,
     );
-    document
-      .getElementById("stays")
-      ?.scrollIntoView({
-        behavior: reduced ? "instant" : "smooth",
-        block: "start",
-      });
+    document.getElementById("stays")?.scrollIntoView({
+      behavior: reduced ? "instant" : "smooth",
+      block: "start",
+    });
   }
 
   return (
